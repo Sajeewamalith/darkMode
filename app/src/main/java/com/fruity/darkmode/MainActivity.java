@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,6 +52,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        Button buttonSecondActivity = findViewById(
+                R.id.button
+        );
+        buttonSecondActivity.setOnClickListener(view -> {
+            Intent secondActivityIntent = new Intent(
+                    getApplicationContext(), MainActivity2.class
+            );
+            startActivity(secondActivityIntent);
+        });
 
     }
 
